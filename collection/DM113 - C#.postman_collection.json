@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "77b0acd4-bc08-43c2-a4dd-5693a9f9e007",
+		"name": "DM113 - C#",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10389127"
+	},
+	"item": [
+		{
+			"name": "PromotionsAPI",
+			"item": [
+				{
+					"name": "Setup",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// pm.collectionVariables.set(\"url\", \"http://localhost:5284/api\")\r",
+									"// Docker\r",
+									"pm.collectionVariables.set(\"url\", \"http://localhost:8080/api\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/promo/promotions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"promo",
+								"promotions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Promo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"random_id\",\r\n    \"name\": \"name\",\r\n    \"description\": \"this is a description\",\r\n    \"price\": 1999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/promo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"promo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Promo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"random_id\",\r\n    \"name\": \"name\",\r\n    \"description\": \"this is a description\",\r\n    \"price\": 1999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/promo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"promo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Promo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"random_id\",\r\n    \"name\": \"name\",\r\n    \"description\": \"this is a description\",\r\n    \"price\": 1999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/promo/65da2acf052f3afc4de89e15",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"promo",
+								"65da2acf052f3afc4de89e15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Promo Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name 2\",\r\n    \"description\": \"this is a description\",\r\n    \"price\": 1999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/promo/65da25e55a04f7693dcf0518",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"promo",
+								"65da25e55a04f7693dcf0518"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": ""
+		}
+	]
+}
