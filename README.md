@@ -21,7 +21,7 @@ PromotionsAPI is a .NET Web API that provides endpoints for managing promotions.
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/pedroblimaa/PromotionsAPI.git
+    git clone https://github.com/pedroblimaa/DM113-PromotionsAPI.git
     ```
 
 2. Navigate to the project directory:

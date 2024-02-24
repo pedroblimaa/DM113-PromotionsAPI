@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "77b0acd4-bc08-43c2-a4dd-5693a9f9e007",
+		"_postman_id": "5d736808-c1a8-4b13-acfc-4b1f7ebae8c3",
 		"name": "DM113 - C#",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "10389127"
@@ -10,7 +10,7 @@
 			"name": "PromotionsAPI",
 			"item": [
 				{
-					"name": "Setup",
+					"name": "Setup - Get All",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -28,13 +28,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/promo/promotions",
+							"raw": "{{url}}/promo",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"promo",
-								"promotions"
+								"promo"
 							]
 						}
 					},
@@ -51,6 +50,17 @@
 								],
 								"type": "text/javascript"
 							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var responseData = pm.response.json();\r",
+									"\r",
+									"pm.collectionVariables.set(\"id\", responseData.id);"
+								],
+								"type": "text/javascript"
+							}
 						}
 					],
 					"request": {
@@ -58,7 +68,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"random_id\",\r\n    \"name\": \"name\",\r\n    \"description\": \"this is a description\",\r\n    \"price\": 1999\r\n}",
+							"raw": "{\r\n    \"name\": \"Galaxy S24\",\r\n    \"description\": \"Samsung Galaxy s24, new smartphone\",\r\n    \"price\": 2199\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -118,6 +128,47 @@
 					"response": []
 				},
 				{
+					"name": "Get Promo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"random_id\",\r\n    \"name\": \"name\",\r\n    \"description\": \"this is a description\",\r\n    \"price\": 1999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/promo/{{id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"promo",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete Promo",
 					"event": [
 						{
@@ -143,13 +194,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/promo/65da2acf052f3afc4de89e15",
+							"raw": "{{url}}/promo/{{id}}",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"promo",
-								"65da2acf052f3afc4de89e15"
+								"{{id}}"
 							]
 						}
 					},
@@ -173,7 +224,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"name 2\",\r\n    \"description\": \"this is a description\",\r\n    \"price\": 1999\r\n}",
+							"raw": "{\r\n    \"name\": \"Galaxy S24 Ultra\",\r\n    \"description\": \"Samsung Galaxy s24 Ultra, new flagship smartphone\",\r\n    \"price\": 3899\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -181,13 +232,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/promo/65da25e55a04f7693dcf0518",
+							"raw": "{{url}}/promo/{{id}}",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"promo",
-								"65da25e55a04f7693dcf0518"
+								"{{id}}"
 							]
 						}
 					},
@@ -199,6 +250,10 @@
 	"variable": [
 		{
 			"key": "url",
+			"value": ""
+		},
+		{
+			"key": "id",
 			"value": ""
 		}
 	]

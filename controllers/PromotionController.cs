@@ -10,12 +10,6 @@ public class PromotionController(PromotionService promotionService) : Controller
 {
     private readonly PromotionService _promotionService = promotionService;
 
-    [HttpGet("Promotions")]
-    public IActionResult GetPromotions()
-    {
-        return Ok("GetPromotions");
-    }
-
     [HttpGet]
     public ActionResult<List<Promotion>> Get() => _promotionService.Get();
 
